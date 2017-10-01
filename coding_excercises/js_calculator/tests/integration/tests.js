@@ -24,4 +24,13 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('1234567890')
   })
 
+  it('should have a working addition operators', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number1')).click();
+    element(by.css('#operator_add')).click();
+    element(by.css('#number1')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('2')
+  })
+
 });
